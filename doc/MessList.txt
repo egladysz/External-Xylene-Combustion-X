@@ -1,0 +1,46 @@
+[MOVE THING] ("Entity"?)
+	<x,y,image>
+	-Moves
+	-Dies
+	display(?)
+	VisualEffects
+	[COLLIDES THING]
+		-Collides
+		Bullet
+		Laser
+		[SHOOT THING]
+			-Shoots
+			Player
+				-Death Attack(Bomb)
+			Enemy
+			Boss
+				-Attack Change
+	
+
+
+Game
+	contains:
+	PlayingField
+		contains: 
+		Entities
+			contains:
+				locations
+
+Bullet
+------
+
+ALL: type,x,y (color?)
+
+A1: angle, v
+A2: angle, v, a
+B1: vx, vy
+B2: vx, vy, ax, ay;
+
+Laser
+-----
+
+ALL: x,y,length,width, angle (color?)
+
+Moving: v
+Static: duration, warningTime
+
